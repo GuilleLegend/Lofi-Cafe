@@ -50,6 +50,7 @@ body::before {
 }
 
 $panel-border-radius: 6px;
+
 .panel {
   background: $ui-background;
   border-radius: $panel-border-radius;
@@ -143,6 +144,7 @@ $panel-border-radius: 6px;
   }
 
   $slider-height: 3.7px;
+
   input[type='range'] {
     border-radius: 0;
     margin: 0;
@@ -162,13 +164,16 @@ $panel-border-radius: 6px;
     &::-webkit-slider-runnable-track {
       @include slider-track;
     }
+
     &::-moz-range-track {
       @include slider-track;
     }
+
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
       @include slider-thumb;
     }
+
     &::-moz-range-thumb {
       @include slider-thumb;
     }
@@ -194,6 +199,7 @@ $panel-border-radius: 6px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-right: 1px solid $ui-background;
+
     @media not screen and (max-width: 900px) {
       backdrop-filter: none;
     }
@@ -209,11 +215,9 @@ $panel-border-radius: 6px;
 
       &::before {
         content: '';
-        background: radial-gradient(
-          circle at 2px 2px,
-          #f42 0%,
-          #f00 30%
-        );
+        background: radial-gradient(circle at 2px 2px,
+            #f42 0%,
+            #f00 30%);
         width: 10px;
         height: 10px;
         margin-right: 3px;
@@ -221,14 +225,13 @@ $panel-border-radius: 6px;
         display: inline-block;
       }
 
-      &.paused{
-        color: rgba(255,255,255,0.5);
-        &::before{
-          background:radial-gradient(
-            circle at 2px 2px,
-            rgb(239, 139, 121) 0%,
-            rgb(173, 79, 79) 30%
-          );
+      &.paused {
+        color: rgba(255, 255, 255, 0.5);
+
+        &::before {
+          background: radial-gradient(circle at 2px 2px,
+              rgb(239, 139, 121) 0%,
+              rgb(173, 79, 79) 30%);
         }
       }
     }
@@ -387,7 +390,8 @@ $panel-border-radius: 6px;
       }
     }
 
-    #repeat-button, #shuffle-button {
+    #repeat-button,
+    #shuffle-button {
       min-height: 32px;
       min-width: 32px;
       background-size: 16px;
@@ -448,6 +452,7 @@ $panel-border-radius: 6px;
     flex-direction: column;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+
     @media not screen and (max-width: 900px) {
       backdrop-filter: none;
     }
@@ -535,6 +540,7 @@ $panel-border-radius: 6px;
             0% {
               transform: rotate(0deg);
             }
+
             100% {
               transform: rotate(360deg);
             }
@@ -546,6 +552,7 @@ $panel-border-radius: 6px;
         background: rgba(248, 209, 135, 0.219);
 
         &:not(.loading) {
+
           // playing icon
           .track-icons:before {
             content: '';
@@ -610,6 +617,20 @@ $panel-border-radius: 6px;
       vertical-align: -3px;
     }
   }
+
+  #artemis {
+    &:before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: url('https://media.licdn.com/dms/image/D4D0BAQFZBbywQzo5UA/company-logo_200_200/0/1682504612617?e=1690416000&v=beta&t=odUsBj6TPp69pGjnsmuJ-JpOnH9Dp0RZ7x9e1rRDNFc');
+      background-size: 100%;
+      display: inline-block;
+      margin-right: 3px;
+      vertical-align: -3px;
+      border-radius: 50%;
+    }
+  }
 }
 
 button {
@@ -635,6 +656,7 @@ button.flat {
       color: black;
     }
   }
+
   &:active {
     background-color: white;
     color: black;
@@ -655,6 +677,7 @@ button.plain {
       background-color: $ui-hover-background;
     }
   }
+
   &:active {
     background-color: $ui-hover-background;
   }
@@ -679,6 +702,7 @@ button.circle {
       background-color: $ui-hover-background;
     }
   }
+
   &:active {
     background-color: $ui-hover-background;
   }
@@ -726,13 +750,16 @@ input[type='range'] {
   &::-webkit-slider-runnable-track {
     @include slider-track;
   }
+
   &::-moz-range-track {
     @include slider-track;
   }
+
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     @include slider-thumb;
   }
+
   &::-moz-range-thumb {
     @include slider-thumb;
     border: 0;
@@ -762,13 +789,16 @@ input[type='range'] {
   &::-webkit-slider-runnable-track {
     @include slider-track;
   }
+
   &::-moz-range-track {
     @include slider-track;
   }
+
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     @include slider-thumb;
   }
+
   &::-moz-range-thumb {
     @include slider-thumb;
   }
@@ -792,10 +822,12 @@ input[type='range'] {
       left: 2px;
       animation-delay: -0.24s;
     }
+
     &:nth-child(2) {
       left: 8px;
       animation-delay: -0.12s;
     }
+
     &:nth-child(3) {
       left: 14px;
       animation-delay: 0;
@@ -808,6 +840,7 @@ input[type='range'] {
     top: 0px;
     height: 16px;
   }
+
   50%,
   100% {
     top: 4px;
@@ -819,9 +852,11 @@ input[type='range'] {
 * {
   scrollbar-width: thin;
 }
+
 *::-webkit-scrollbar {
   width: 10px;
 }
+
 *::-webkit-scrollbar-thumb {
   background-color: $ui-hover-background;
   margin: 2px;
@@ -839,6 +874,7 @@ input[type='range'] {
 // responsive
 $responsive-min-width: 300px;
 $responsive-max-width: 360px;
+
 @media screen and (max-width: 900px) {
   body {
     gap: 48px;
