@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>LOFI</title>
+  <title>Lofi Café</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="favicon-32.png" sizes="32x32">
@@ -13,7 +13,7 @@
   <div id="header">Lofi Café</div>  
   <div id="center">
     <div id="intro-text" class="panel">
-      <span>Our machine learning model has learned to represent a lofi track as a vector of 100 features. Each slider in the Latent Space panel corresponds to one such feature. Slide them around and generate new tracks!</span>
+      <span>Nuestro modelo de aprendizaje automático ha aprendido a representar una pista de lo-fi como un vector de 100 características. Cada control deslizante en el panel de Inteligencia Artificial corresponde a una de estas características. ¡Muévelos y genera nuevas pistas!</span>
     </div>
     <div id="main">
       <div id="player-panel">
@@ -84,11 +84,11 @@
         </template>
         <div id="export-panel" class="panel" style="visibility: hidden;">
           <div class="header">
-            <div class="header-text">SHARE THIS PLAYLIST</div>
+            <div class="header-text">COMPARTE ESTA  PLAYLIST</div>
           </div>
           <div id="export-panel-content">
             <input id="export-url-input" readonly>
-            <button id="copy-button" class="flat">Copy</button>
+            <button id="copy-button" class="flat">Copiar</button>
           </div>
         </div>
         <div id="playlist" class="panel">
@@ -97,7 +97,7 @@
             <button id="export-button" class="plain" title="Share this playlist"></button>
           </div>
           <div id="playlist-content">
-            <button id="load-playlist-button" class="flat">Load default playlist</button>
+            <button id="load-playlist-button" class="flat">Cargar Playlist por Defecto</button>
             <div id="playlist-tracks">
             </div>
           </div>
@@ -105,20 +105,20 @@
       </div>
       <div id="slider-panel" class="panel">
         <div class="header">
-          <div class="header-text">LATENT SPACE</div>
+          <div class="header-text">IA</div>
           <button id="help" class="plain"></button>
         </div>
         <div id="slider-panel-content">
           <div id="sliders">
             <button id="refresh-button" class="plain" title="Sample new values from a normal distribution"></button>
           </div>
-          <button id="generate-button" class="flat"><div id="loading-animation" style="display: none"><div></div><div></div><div></div></div>Generate</button>
+          <button id="generate-button" class="flat"><div id="loading-animation" style="display: none"><div></div><div></div><div></div></div>Generar</button>
         </div>
       </div>
     </div>
   </div>
   <div id="footer">
-    <span><a href="https://github.com/GuilleLegend" target="_blank" id="github">GitHub</a></span>
+    <span><a href="https://github.com/GuilleLegend/Lofi-Cafe" target="_blank" id="github">GitHub</a></span>
     <span><a href="https://artemiscode.es" target="_blank" id="artemis">Powered by Artemis Code</a></span>
   </div>
 
