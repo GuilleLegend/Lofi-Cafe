@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/GuilleLegend">
-    <img src="https://github.com/GuilleLegend/Lofi-Cafe/blob/70db2df41b06c9ba79946bce366d2d3fce3ae096/client/assets/cover.jpg" alt="Logo" width="200" height="150">
+    <img src="https://github.com/GuilleLegend/Lofi-Cafe/blob/70db2df41b06c9ba79946bce366d2d3fce3ae096/client/assets/background2.jpg" alt="Logo" width="200" height="150">
   </a>
 
   <h1 align="center">Lofi Caffe</h1>
