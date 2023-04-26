@@ -46,28 +46,3 @@ If you have a suggestion that would make this better, please fork the repo and c
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-## Acknowledgments
-
-Big thanks to [ZOOPRA UG](https://www.zoopra.de/) for hosting the server!
-
-<a href="https://www.zoopra.de/">
-  <img src="https://www.zoopra.de/wp-content/uploads/2020/11/logo_breit_800x200_black.png" href="https://www.zoopra.de" width="200px"/>
-</a>
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[build-shield]: https://img.shields.io/github/actions/workflow/status/jacbz/Lofi/client.yml?style=for-the-badge
-[build-url]: https://github.com/jacbz/Lofi/actions
-[contributors-shield]: https://img.shields.io/github/contributors/jacbz/Lofi?style=for-the-badge
-[contributors-url]: https://github.com/jacbz/Lofi/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/jacbz/Lofi?style=for-the-badge
-[forks-url]: https://github.com/jacbz/Lofi/network/members
-[stars-shield]: https://img.shields.io/github/stars/jacbz/Lofi?style=for-the-badge
-[stars-url]: https://github.com/jacbz/Lofi/stargazers
-[issues-shield]: https://img.shields.io/github/issues/jacbz/Lofi?style=for-the-badge
-[issues-url]: https://github.com/jacbz/Lofi/issues
-[license-shield]: https://img.shields.io/github/license/jacbz/Lofi?style=for-the-badge
-[license-url]: https://github.com/jacbz/Lofi/blob/master/LICENSE.txt
