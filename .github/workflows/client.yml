@@ -1,0 +1,35 @@
+name: Client CI/CD
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ client/** ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install npm dependencies
+        working-directory: ./client
+        run: npm install --production
+
+      - name: Build with webpack
+        working-directory: ./client
+        run: npm run build
+
+      - name: Deploy to GitHub pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: client/dist
+          single-commit: true

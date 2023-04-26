@@ -1,0 +1,21 @@
+.DS_Store
+
+# Client
+client/node_modules
+client/dist
+
+# Model
+.idea
+.cache
+__pycache__
+model/dataset/hooktheory
+model/dataset/processed*
+spotify_client_*
+*.npy
+*.pth
+embedding*.json
+log.txt
+model/*.png
+
+# Checkpoints
+checkpoints
