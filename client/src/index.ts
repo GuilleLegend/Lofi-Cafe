@@ -135,7 +135,7 @@ const formatTime = (seconds: number) => {
 const seekbar = document.getElementById('seekbar') as HTMLInputElement;
 seekbar.addEventListener('input', () => {
   timeLabel.textContent = formatTime(seekbar.valueAsNumber);
-  formatInputRange(seekbar, '#fc5c8c');
+  formatInputRange(seekbar, '#eab676');
 });
 let wasPaused = false;
 let seekbarDragging = false;
@@ -212,7 +212,7 @@ player.updateTrackDisplay = (seconds?: number, spectrum?: Float32Array) => {
     timeLabel.textContent = '0:00';
     totalTimeLabel.textContent = '0:00';
   }
-  formatInputRange(seekbar, '#fc5c8c');
+  formatInputRange(seekbar, '#eab676');
   updateVisualization(spectrum);
 };
 

@@ -3,13 +3,13 @@
 
 $title-font: 'Monoton', sans-serif;
 $body-font: 'Josefin Sans', 'Segoe UI', sans-serif;
-$ui-background: rgba(0, 0, 0, 0.25);
-$ui-hover-background: rgba(255, 255, 255, 0.2);
+$ui-background: rgba(0, 0, 0, 0.671);
+$ui-hover-background: rgba(255, 196, 107, 0.26);
 $height: 426px;
 
 * {
   font-family: $body-font;
-  color: white;
+  color: rgb(235, 196, 113);
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -27,7 +27,7 @@ body {
 }
 
 @mixin background($url) {
-  background: url($url), black;
+  background: url($url), rgb(0, 0, 0);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -501,11 +501,11 @@ $panel-border-radius: 6px;
       }
 
       &.dragging {
-        background: rgba(0, 0, 0, 0.2) !important;
+        background: rgba(0, 0, 0, 0.5) !important;
       }
 
       &:hover {
-        background: rgba(0, 0, 0, 0.1);
+        background: rgba(0, 0, 0, 0.363);
 
         .track-actions {
           visibility: visible;
@@ -543,7 +543,7 @@ $panel-border-radius: 6px;
       }
 
       &.playing {
-        background: rgba(0, 0, 0, 0.15);
+        background: rgba(248, 209, 135, 0.219);
 
         &:not(.loading) {
           // playing icon
@@ -589,7 +589,7 @@ $panel-border-radius: 6px;
 
   .spectrum-bar {
     flex: 1;
-    background: rgba(0, 0, 0, 0.06);
+    background: rgba(253, 143, 0, 0.123);
     transition: height 0.1s;
   }
 }
