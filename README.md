@@ -1,43 +1,22 @@
-[![Build][build-shield]][build-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Forks][forks-shield]][forks-url]
-[![Issues][issues-shield]][issues-url]
-[![Contributors][contributors-shield]][contributors-url]
-[![Apache License][license-shield]][license-url]
-
-
+<div id="top"></div>
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://lofi.jacobzhang.de/?default">
-    <img src="https://repository-images.githubusercontent.com/377117802/d55ba858-636f-4c44-9195-94971754fec0" width="400px"/>
+  <a href="https://github.com/GuilleLegend">
+    <img src="https://github.com/GuilleLegend/Lofi-Cafe/blob/70db2df41b06c9ba79946bce366d2d3fce3ae096/client/assets/cover.jpg" alt="Logo" width="150" height="150">
   </a>
 
-  <h3 align="center">Lofi</h3>
+  <h1 align="center">Lofi Caffe</h1>
 
   <p align="center">
-    A ML-supported lo-fi music generator.
+    Machine Learning supported Lo-Fi Music Generator
     <br />
-    <a href="https://lofi.jacobzhang.de/?default"><strong>Explore »</strong></a>
+    <a href="https://lofi-cafe-bco8.vercel.app/"><strong>Hear the results »</strong></a>
+    <br />
+    <br />
+    <p align="center">Fork of <a href="https://github.com/jacbz/Lofi"><strong>jacbz/Lofi</strong></a></p>
   </p>
 </div>
-
-## About
-We trained a VAE model in [PyTorch](https://pytorch.org/) to represent a lo-fi track as a vector of 100 features. A lo-fi track consists of chords, melodies, and other musical parameters. The web client uses [Tone.js](https://tonejs.github.io/) to make a dusty lo-fi track out of these parameters.
-
-<div align="center">
-  <a href="https://lofi.jacobzhang.de/?default">
-    <img src="https://i.imgur.com/cxFsYPm.jpg" width="800px"/>
-  </a>
-</div>
-
-## Architecture
-
-* **Client**: The client is written in TypeScript and built with Webpack. It uses Tone.js to generate music.
-* **Model**: The model is implemented in PyTorch. We synthesized various datasets, including Hooktheory and Spotify.
-* **Server**: The server is a basic Flask instance that deploys the trained model checkpoint. The client communicates with the server using a REST API.
-
-<img src="https://i.imgur.com/j70305Y.png" width="600px"/>
 
 ## Setup
 If you only want to tinker around with the client, you will only need the `client` folder. This will use the project's server as the backend.
