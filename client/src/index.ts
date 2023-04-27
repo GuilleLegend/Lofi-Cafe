@@ -308,6 +308,7 @@ const repeatButton = document.getElementById('repeat-button') as HTMLButtonEleme
 const shuffleButton = document.getElementById('shuffle-button');
 const volumeButton = document.getElementById('volume-button');
 const recordButton = document.getElementById('record-button');
+const radiodButton = document.getElementById('radio-button');
 const volumeBar = document.getElementById('volume-bar') as HTMLInputElement;
 
 player.getGain = () => volumeBar.valueAsNumber;
@@ -324,7 +325,7 @@ player.onPlayingStateChange = updatePlayingState;
 player.onLoadingStateChange = updateTrackClasses;
 playButton.addEventListener('click', async () => {
   if (player.playlist.length === 0) return;
-  
+
   if (player.isPlaying) {
     player.pause();
   } else {
@@ -395,6 +396,76 @@ recordButton.addEventListener('click', async () => {
   }
 });
 
+const updateRadioState = () => {
+  if (player.isRadio) {
+    radiodButton.classList.toggle('paused', false);
+
+  } else {
+    radiodButton.classList.toggle('paused', true);
+  }
+};
+
+player.onRadioStateChange = updateRadioState;
+
+radiodButton.addEventListener('click', async () => {
+  if (player.isRadio) {
+    player.pauseRadio();
+    checkRadioStatus();
+    radiodButton.classList.toggle('paused', true);
+  } else {
+    player.startRadio();
+    iniRadio();
+    radiodButton.classList.toggle('paused', false);
+
+  }
+});
+
+export async function iniRadio() {
+  newRadioTrack();
+  setTimeout(() => {
+    checkRadioStatus();
+  }, 1000)
+  setInterval(() => {
+    newRadioTrack();
+  }, 60000)
+}
+
+export async function newRadioTrack() {
+
+  const numberArray = sliders.map((n) => n.valueAsNumber);
+  let params;
+  try {
+    params = await decode(numberArray);
+  } catch (err) {
+    generateButton.textContent = 'Error!';
+    return;
+  }
+  const producer = new Producer();
+  const track = producer.produce(params);
+  player.addToPlaylist(track);
+  refreshLatentSpace()
+}
+
+export async function checkRadioStatus() {
+
+  if (player.playlist.length === 0) {
+    setTimeout(() => {
+      checkRadioStatus();
+    },2000)
+    return;
+  }
+
+  if (player.isRadio) {
+    player.play();
+  } else {
+    player.pause();
+    if (!player.muted) {
+      player.gain.gain.value = volumeBar.valueAsNumber;
+    }
+
+  }
+}
+
 volumeBar.addEventListener('input', () => {
   if (player.muted) {
     volumeButton.click();
@@ -453,3 +524,4 @@ for (const [action, handler] of actionsAndHandlers) {
     console.log(`The media session action ${action}, is not supported`);
   }
 }
+
