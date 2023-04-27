@@ -38,61 +38,83 @@ class Player {
     }
   }
 
-   /** Recorder */
-   private _recorder: Tone.Recorder;
+  /** Recorder */
+  private _recorder: Tone.Recorder;
 
-   async downloadRecording() {
-     if (this._recorder) {
-       const recording = await this._recorder.stop();
-       const type = recording?.type?.split(';')[0]?.split('/')[1] || 'webm';
-       if (recording?.size > 0) {
-         const url = URL.createObjectURL(recording);
-         const anchor = document.createElement('a');
-         anchor.download = `lofi-record.${type}`;
-         anchor.href = url;
-         anchor.click();
-       }
-       this._recorder = null;
-     }
-   }
+  async downloadRecording() {
+    if (this._recorder) {
+      const recording = await this._recorder.stop();
+      const type = recording?.type?.split(';')[0]?.split('/')[1] || 'webm';
+      if (recording?.size > 0) {
+        const url = URL.createObjectURL(recording);
+        const anchor = document.createElement('a');
+        anchor.download = `lofi-record.${type}`;
+        anchor.href = url;
+        anchor.click();
+      }
+      this._recorder = null;
+    }
+  }
 
-   /** Whether the player is currently recording */
-   private _isRecording: boolean = false;
+  /** Whether the player is currently recording */
+  private _isRecording: boolean = false;
 
-   get isRecording() {
-     return this._isRecording;
-   }
+  get isRecording() {
+    return this._isRecording;
+  }
 
-   set isRecording(isRecording: boolean) {
-     if (this._isRecording !== isRecording) {
-       this._isRecording = isRecording;
-       if (!this._recorder) {
-         this._recorder = new Tone.Recorder();
-         this._recorder.start();
-       }
+  set isRecording(isRecording: boolean) {
+    if (this._isRecording !== isRecording) {
+      this._isRecording = isRecording;
+      if (!this._recorder) {
+        this._recorder = new Tone.Recorder();
+        this._recorder.start();
+      }
 
-       this.onRecordingStateChange();
-       if (this.gain) {
-         if (this._isRecording) {
-           this.gain.connect(this._recorder);
-         } else {
-           this.gain.disconnect(this._recorder);
-         }
-       }
+      this.onRecordingStateChange();
+      if (this.gain) {
+        if (this._isRecording) {
+          this.gain.connect(this._recorder);
+        } else {
+          this.gain.disconnect(this._recorder);
+        }
+      }
 
-       if (!this._isRecording) {
-         this.downloadRecording();
-       }
-     }
-   }
+      if (!this._isRecording) {
+        this.downloadRecording();
+      }
+    }
+  }
 
-   pauseRecording() {
-     this.isRecording = false;
-   }
+  pauseRecording() {
+    this.isRecording = false;
+  }
 
-   startRecording() {
-     this.isRecording = true;
-   }
+  startRecording() {
+    this.isRecording = true;
+  }
+
+
+  /** Whether the player is running radio mode */
+  private _isRadio: boolean = false;
+
+  get isRadio() {
+    return this._isRadio;
+  }
+
+  set isRadio(isRadio: boolean) {
+    if (this._isRadio !== isRadio) {
+      this._isRadio = isRadio;
+    }
+  }
+
+  pauseRadio() {
+    this.isRadio = false;
+  }
+
+  startRadio() {
+    this.isRadio = true;
+  }
 
   /** Whether the player is currently loading */
   private _isLoading: boolean = false;
@@ -145,6 +167,9 @@ class Player {
 
   /** Function to call when isRecording changes */
   onRecordingStateChange: () => void;
+
+  /** Function to call when isRadio changes */
+  onRadioStateChange: () => void;
 
   /** Function to call when isLoading changes */
   onLoadingStateChange: () => void;
