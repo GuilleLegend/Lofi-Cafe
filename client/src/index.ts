@@ -451,7 +451,7 @@ export async function checkRadioStatus() {
   if (player.playlist.length === 0) {
     setTimeout(() => {
       checkRadioStatus();
-    },2000)
+    }, 2000)
     return;
   }
 
@@ -482,6 +482,14 @@ const exportButton = document.getElementById('export-button');
 const exportPanel = document.getElementById('export-panel');
 const exportUrlInput = document.getElementById('export-url-input') as HTMLInputElement;
 const copyButton = document.getElementById('copy-button');
+const deletePlaylist = document.getElementById('deletePlaylist-button');
+const videoFactory = document.getElementById('videoFactory-button');
+
+deletePlaylist.addEventListener(('click'), async () => {
+  if (player.playlist.length > 0) {
+    player.playlist = [];
+  }
+});
 exportButton.addEventListener('click', async () => {
   if (exportPanel.style.visibility === 'visible') {
     exportPanel.style.visibility = 'hidden';
@@ -505,6 +513,36 @@ copyButton.addEventListener('click', async () => {
   exportPanel.style.visibility = 'hidden';
   exportPanel.style.opacity = '0';
 });
+
+videoFactory.addEventListener('click', async () => {
+  iniFactory();
+});
+export async function iniFactory() {
+  console.log('Iniciando Fabrica');
+  const password: any = prompt("Por favor, introduce la contraseña");
+  if(password == 2001){
+    const hours: any = prompt("Por favor, introduce la duración del video en horas:");
+    console.log(hours);
+    if (player.isRecording) {
+      player.pauseRecording();
+    } else {
+      console.log('a')
+  
+      player.startRecording();
+      setInterval(() => {
+        if (player.isRecording) {
+          player.pauseRecording();
+          setTimeout(() => {
+            player.startRecording();
+          }, 1000);
+        } else {
+          player.startRecording();
+        }
+        console.log(player.isRecording)
+      }, (hours * 60 * 60 * 1000))
+    }
+  }
+}
 
 // Media Session API
 const actionsAndHandlers = [

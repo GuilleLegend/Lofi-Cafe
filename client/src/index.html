@@ -10,10 +10,12 @@
 </head>
 
 <body>
-  <div id="header">Lofi Café</div>  
+  <div id="header">Lofi Café</div>
   <div id="center">
     <div id="intro-text" class="panel">
-      <span>Nuestro modelo de aprendizaje automático ha aprendido a representar una pista de lo-fi como un vector de 100 características. Cada control deslizante en el panel de Inteligencia Artificial corresponde a una de estas características. ¡Muévelos y genera nuevas pistas!</span>
+      <span>Nuestro modelo de aprendizaje automático ha aprendido a representar una pista de lo-fi como un vector de 100
+        características. Cada control deslizante en el panel de Inteligencia Artificial corresponde a una de estas
+        características. ¡Muévelos y genera nuevas pistas!</span>
     </div>
     <div id="main">
       <div id="player-panel">
@@ -52,7 +54,7 @@
                 <span id="current-time">0:00</span>
                 <span id="slash">/</span>
                 <span id="total-time">0:00</span>
-              </div>            
+              </div>
             </div>
           </div>
           <div id="buttons">
@@ -85,7 +87,7 @@
         </template>
         <div id="export-panel" class="panel" style="visibility: hidden;">
           <div class="header">
-            <div class="header-text">COMPARTE ESTA  PLAYLIST</div>
+            <div class="header-text">COMPARTE ESTA PLAYLIST</div>
           </div>
           <div id="export-panel-content">
             <input id="export-url-input" readonly>
@@ -113,7 +115,15 @@
           <div id="sliders">
             <button id="refresh-button" class="plain" title="Cambiar Valores"></button>
           </div>
-          <button id="generate-button" class="flat"><div id="loading-animation" style="display: none"><div></div><div></div><div></div></div>Generar</button>
+          <button id="generate-button" class="flat">
+            <div id="loading-animation" style="display: none">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>Generar
+          </button>
+          <button id="deletePlaylist-button" class="flat">Borrar Playlist</button>
+          <button id="videoFactory-button" class="flat">Video Factory</button>
         </div>
       </div>
     </div>
@@ -129,5 +139,5 @@
   <div id="preload-images" style="position: absolute"></div>
 </body>
 <script defer src="/_vercel/insights/script.js"></script>
-</html>
 
+</html>
