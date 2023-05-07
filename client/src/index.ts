@@ -526,10 +526,10 @@ export async function iniFactory() {
     if (player.isRecording) {
       player.pauseRecording();
     } else {
-      console.log('a')
-  
+      console.log('Fabrica iniciada')
       player.startRecording();
       setInterval(() => {
+        console.log('Video Guardado')
         if (player.isRecording) {
           player.pauseRecording();
           setTimeout(() => {
